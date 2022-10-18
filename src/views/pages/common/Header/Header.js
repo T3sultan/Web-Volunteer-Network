@@ -1,9 +1,71 @@
-import React from "react";
-
+import React, { useState } from "react";
+import CustomLink from "../../../../hooks/CustomLink";
+import logo from "../../../../assets/logos/Group 1329.png";
+import "./Header.css";
 const Header = () => {
   return (
-    <div>
-      <h2>Header</h2>
+    <div className="navbar bg-base-100">
+      <div className="navbar-start ml-10 mt-4">
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden ">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 "
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-compact dropdown-content  p-2 shadow bg-base-100 rounded-box w-52 "
+          >
+            <li>
+              <CustomLink to="/">Home</CustomLink>
+            </li>
+
+            <li>
+              <CustomLink to="/donation">Donation</CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/events">Events</CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/blog">Blog</CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/login">Login</CustomLink>
+            </li>
+          </ul>
+        </div>
+        <img src={logo} className={`w-2/12 cursor-pointer -ml-4`} alt="" />
+      </div>
+      <div className="navbar-center hidden lg:flex navbar-end ">
+        <ul className="menu menu-horizontal p-0 mr-6 ">
+          <li>
+            <CustomLink to="/">Home</CustomLink>
+          </li>
+          <li>
+            <CustomLink to="/donation">Donation</CustomLink>
+          </li>
+          <li>
+            <CustomLink to="/events">Events</CustomLink>
+          </li>
+          <li>
+            <CustomLink to="/blog">Blog</CustomLink>
+          </li>
+          <li>
+            <CustomLink to="/login">Login</CustomLink>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

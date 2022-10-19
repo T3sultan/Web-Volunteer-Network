@@ -69,7 +69,7 @@ const Signup = () => {
                 required
               />
             </div>
-            <div className="my-2 mt-2 ">
+            <div className="my-4 mt-2 ">
               <input
                 className="w-64 text-white bg-blue-400 cursor-pointer h-9"
                 type="submit"

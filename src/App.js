@@ -1,9 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./views/pages/About/About";
+import AddEvent from "./views/pages/AddEvent/AddEvent";
 import Login from "./views/pages/auth/Login/Login";
 import Signup from "./views/pages/auth/Signup/Signup";
 import Blog from "./views/pages/Blog/Blog";
+import Admin from "./views/pages/common/Admin/Admin";
 import Footer from "./views/pages/common/Footer/Footer";
 import Header from "./views/pages/common/Header/Header";
 import Donation from "./views/pages/Donation/Donation";
@@ -24,6 +26,8 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/addEvent" element={<AddEvent />}></Route>
         <Route path="*" element={<PageNot />}></Route>
       </Routes>
       <Footer />

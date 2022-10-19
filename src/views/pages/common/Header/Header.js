@@ -3,7 +3,17 @@ import CustomLink from "../../../../hooks/CustomLink";
 import logo from "../../../../assets/logos/Group 1329.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./../../../../firebase.init";
+import { signOut } from "firebase/auth";
+import { Icon } from "@iconify/react";
+
 const Header = () => {
+  const [user] = useAuthState(auth);
+  // console.log("user", user);
+  const handleOnSignOut = () => {
+    signOut(auth);
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="mt-4 ml-10 navbar-start">
@@ -41,9 +51,17 @@ const Header = () => {
             <li>
               <CustomLink to="/blog">Blog</CustomLink>
             </li>
-            <li>
-              <CustomLink to="/login">Login</CustomLink>
-            </li>
+            {user ? (
+              <li>
+                <CustomLink onClick={handleOnSignOut}>
+                  <Icon className="w-16 h-10 -ml-5" icon="uil:signout" />
+                </CustomLink>
+              </li>
+            ) : (
+              <li>
+                <CustomLink to="/login">Login</CustomLink>
+              </li>
+            )}
           </ul>
         </div>
         <Link to="/home">
@@ -64,9 +82,18 @@ const Header = () => {
           <li>
             <CustomLink to="/blog">Blog</CustomLink>
           </li>
-          <li>
-            <CustomLink to="/login">Login</CustomLink>
-          </li>
+          {user ? (
+            <li>
+              <CustomLink>{user?.displayName}</CustomLink>
+              <CustomLink onClick={handleOnSignOut}>
+                <Icon className="w-12 h-8 -ml-5" icon="uil:signout" />
+              </CustomLink>
+            </li>
+          ) : (
+            <li>
+              <CustomLink to="/login">Login</CustomLink>
+            </li>
+          )}
         </ul>
       </div>
     </div>

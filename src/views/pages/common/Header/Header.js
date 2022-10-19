@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CustomLink from "../../../../hooks/CustomLink";
 import logo from "../../../../assets/logos/Group 1329.png";
 import "./Header.css";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="navbar bg-base-100">
@@ -45,7 +46,9 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <img src={logo} className={`w-2/12 cursor-pointer -ml-4`} alt="" />
+        <Link to="/home">
+          <img src={logo} className={`w-2/12 cursor-pointer -ml-4`} alt="" />
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex navbar-end ">
         <ul className="menu menu-horizontal p-0 mr-6 ">

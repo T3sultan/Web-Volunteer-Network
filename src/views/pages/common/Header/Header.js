@@ -51,6 +51,12 @@ const Header = () => {
             <li>
               <CustomLink to="/blog">Blog</CustomLink>
             </li>
+            <li>
+              <CustomLink to="/addEvent">Add Event</CustomLink>
+            </li>
+            <li>
+              <CustomLink to="/volunteerRegisterList">Volunteer</CustomLink>
+            </li>
             {user ? (
               <li>
                 <CustomLink onClick={handleOnSignOut}>
@@ -69,7 +75,7 @@ const Header = () => {
         </Link>
       </div>
       <div className="hidden navbar-center lg:flex navbar-end ">
-        <ul className="p-0 mr-6 menu menu-horizontal ">
+        <ul className="p-0 mr-2 menu menu-horizontal ">
           <li>
             <CustomLink to="/home">Home</CustomLink>
           </li>
@@ -82,8 +88,12 @@ const Header = () => {
           <li>
             <CustomLink to="/blog">Blog</CustomLink>
           </li>
+
           {user ? (
             <li>
+              <CustomLink to="/addEvent">Add Event</CustomLink>
+              <CustomLink to="/volunteer">List</CustomLink>
+
               <CustomLink>{user?.displayName}</CustomLink>
               <CustomLink onClick={handleOnSignOut}>
                 <Icon className="w-12 h-8 -ml-5" icon="uil:signout" />

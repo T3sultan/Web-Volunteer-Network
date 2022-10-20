@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "./App.css";
 import About from "./views/pages/About/About";
 import AddEvent from "./views/pages/AddEvent/AddEvent";
@@ -39,7 +40,8 @@ function App() {
 
         <Route path="*" element={<PageNot />}></Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
+      <ToastContainer />
     </div>
   );
 }

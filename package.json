@@ -45,5 +45,18 @@
     "@iconify/react": "4.0.0",
     "prettier": "2.7.1",
     "tailwindcss": "3.1.8"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T3sultan/Web-Volunteer-Network.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/T3sultan/Web-Volunteer-Network/issues"
+  },
+  "homepage": "https://github.com/T3sultan/Web-Volunteer-Network#readme"
 }

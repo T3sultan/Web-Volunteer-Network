@@ -12,9 +12,9 @@ const Login = () => {
 
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  let errorElement;
+  // let errorElement;
 
-  const [signInWithEmailAndPassword, user, error, loading] =
+  const [signInWithEmailAndPassword, user, loading] =
     useSignInWithEmailAndPassword(auth);
 
   if (loading) {
@@ -24,9 +24,9 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
-  if (!error) {
-    errorElement = <p className="text-red-400">Error: {error?.message}</p>;
-  }
+  // if (!error) {
+  //   errorElement = <p className="text-red-400">Error: {error?.message}</p>;
+  // }
 
   const handleOnSignIn = event => {
     event.preventDefault();

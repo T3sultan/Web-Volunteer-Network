@@ -7,7 +7,7 @@ import Login from "./views/pages/auth/Login/Login";
 import RequireAuth from "./views/pages/auth/RequireAuth";
 import Signup from "./views/pages/auth/Signup/Signup";
 import Blog from "./views/pages/Blog/Blog";
-import Footer from "./views/pages/common/Footer/Footer";
+// import Footer from "./views/pages/common/Footer/Footer";
 import Header from "./views/pages/common/Header/Header";
 import Donation from "./views/pages/Donation/Donation";
 import Events from "./views/pages/Events/Events";

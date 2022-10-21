@@ -1,7 +1,7 @@
 import React from "react";
 
 const Volunteer = props => {
-  const { title, description, date, image, color } = props.volunteer;
+  const { title, image, color } = props.volunteer;
 
   console.log(title);
   return (

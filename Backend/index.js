@@ -21,6 +21,7 @@ async function run() {
     await client.connect();
     const events = client.db("volunteer-networks");
     const volunteerCollection = events.collection("volunteer");
+    const eventCollection = events.collection("eventTask");
 
     app.post("/volunteer", async (req, res) => {
       const newVolunteer = req.body;
@@ -33,6 +34,17 @@ async function run() {
       const volunteer = await cursor.toArray();
       res.send(volunteer);
     });
+    app.post("/eventTask", async (req, res) => {
+      const eventTask = req.body;
+      const result = await eventCollection.insertOne(eventTask);
+      res.send(result);
+    });
+    app.get("/eventTask", async (req, res) => {
+      const query = {};
+      const cursor = eventCollection.find(query);
+      const events = await cursor.toArray();
+      res.send(events);
+    });
   } finally {
     //      await client.close()
   }
@@ -43,5 +55,5 @@ app.get("/", (req, res) => {
   res.send("running volunteer network");
 });
 app.listen(port, () => {
-  console.log(`'running volunteer network`, port);
+  console.log(`running volunteer network`, port);
 });

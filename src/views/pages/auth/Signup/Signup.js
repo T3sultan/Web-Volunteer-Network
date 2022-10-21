@@ -12,7 +12,7 @@ const Signup = () => {
 
   const [updateProfile, updating] = useUpdateProfile(auth);
 
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, loading] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   if (loading || updating) {
@@ -25,8 +25,8 @@ const Signup = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    const description = event.target.description.value;
-    const organize = event.target.organize.value;
+    // const description = event.target.description.value;
+    // const organize = event.target.organize.value;
 
     console.log(name, email, password);
     await createUserWithEmailAndPassword(email, password);
